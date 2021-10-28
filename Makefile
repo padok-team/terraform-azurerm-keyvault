@@ -20,22 +20,20 @@ format: ## Runs Terraform fmt and Validate
 ##@ Commit
 commit: ## Commits all files
 	$(call info_colors,purple,🛍 Commits Changed files)
-	@git add .
 	@echo "Modified files:"
 	@git status -s
 	@git cz
 
 cz: doc precommit commit  ## Runs Docs, precommit and commits
 
-##@ Terraform
-plan: ## Plan in the tooling folder
-	$(call info_colors,green,🗺 Terraform Plan)
-	@cd $(DIR_GIT)/tooling && terraform init && terraform plan
+##@ Version
+dry-run: ## Dry run the version
+	$(call info_colors,green,👏 Generate Version Dry Run)
+	@npm run dry-run
 
-apply: ## Apply in the tooling folder
-	$(call info_colors,green,👏 Terraform Apply)
-	@cd $(DIR_GIT)/tooling && terraform init && terraform apply
-
+version: ## Generate the version
+	$(call info_colors,green,👏 Generate Version)
+	@npm run version
 
 include $(DIR_GIT)/prettier.mk
 
