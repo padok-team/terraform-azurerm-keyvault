@@ -1,4 +1,4 @@
-# CLOUD_PROVIDER TYPE Terraform module
+# Azure keyvault Terraform module
 
 Terraform module which creates a Key vault resources on Azure.
 
