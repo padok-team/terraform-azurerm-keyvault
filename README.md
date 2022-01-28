@@ -4,8 +4,8 @@ Terraform module which creates a Key vault resources on Azure.
 
 ## User Stories for this module
 
-- AAOPS I have a key vault that allow me to store secrets
-- AAOPS I have a key vault that allow me to store certificates
+- AAOPS I have a key vault that allows me to store secrets
+- AAOPS I have a key vault that allows me to store certificates
 
 ## Usage
 
