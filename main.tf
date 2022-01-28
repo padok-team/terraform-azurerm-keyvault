@@ -18,15 +18,15 @@ resource "azurerm_key_vault" "this" {
   enable_rbac_authorization       = var.enable_rbac_authorization
   # Allow all azure services but Deny everyting else
   network_acls {
-    bypass = "AzureServices"
-    default_action = "Deny"
+    bypass                     = "AzureServices"
+    default_action             = "Deny"
     ip_rules                   = var.network_acls.ip_rules
     virtual_network_subnet_ids = var.network_acls.virtual_network_subnet_ids
   }
 
-  purge_protection_enabled   =  true
+  purge_protection_enabled   = true
   soft_delete_retention_days = var.soft_delete_retention_days
-  tags = var.tags
+  tags                       = var.tags
 }
 data "azurerm_monitor_diagnostic_categories" "this" {
   count       = var.logs_enabled ? 1 : 0

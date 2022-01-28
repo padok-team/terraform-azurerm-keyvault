@@ -50,8 +50,8 @@ variable "network_acls" {
     virtual_network_subnet_ids = list(string)
   })
   description = "Network acls to deploy on the key vault. ip_rules is a list of IP or CIDR blocks"
-  default     = {
-    ip_rules = []
+  default = {
+    ip_rules                   = []
     virtual_network_subnet_ids = []
   }
 }
