@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.1.0](https://github.com/padok-team/terraform-azurerm-keyvault/compare/v0.0.1...v0.1.0) (2022-03-18)
+
+
+### Features
+
+* **logs:** add logs ([57bdceb](https://github.com/padok-team/terraform-azurerm-keyvault/commit/57bdceb58ca0337332566f8e690b25fb2cb3f62c)), closes [#2](https://github.com/padok-team/terraform-azurerm-keyvault/issues/2)
+
+
+### Bug Fixes
+
+* **logs:** add variables ([4b009c1](https://github.com/padok-team/terraform-azurerm-keyvault/commit/4b009c11785f7abf6f460b510c0b5c0674869000))
+
 ### 0.0.1 (2021-10-28)
 
 
