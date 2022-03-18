@@ -35,10 +35,6 @@ version: ## Generate the version
 	$(call info_colors,green,👏 Generate Version)
 	@npm run version
 
-release: ## Generate a draft for the release using Github Cli
-	$(call info_colors,green,👏 Generate Release)
-	@gh release create -d -F CHANGELOG.md
-
 include $(DIR_GIT)/prettier.mk
 
 .PHONY: all doc format
