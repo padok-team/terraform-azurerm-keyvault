@@ -11,7 +11,7 @@ Terraform module which creates a Key Vault resource on Azure.
 
 ```hcl
 module "key_vault" {
-  source = "git@github.com/padok-team/terraform-azurerm-keyvault?ref=v0.0.1"
+  source = "git@github.com/padok-team/terraform-azurerm-keyvault?ref=v0.1.0"
 
   name  = "my_key_vault" 
   resource_group_name = "my_rg"
