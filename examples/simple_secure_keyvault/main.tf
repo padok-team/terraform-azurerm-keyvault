@@ -22,10 +22,10 @@ resource "azurerm_resource_group" "example" {
 }
 
 module "keyvault" {
-  source = "../.."
-  name  = random_pet.random.id # Vault names are globaly unique
+  source              = "../.."
+  name                = random_pet.random.id # Vault names are globaly unique
   resource_group_name = azurerm_resource_group.example.name
-  sku_name = "standard"
+  sku_name            = "standard"
 
   depends_on = [
     azurerm_resource_group.example
