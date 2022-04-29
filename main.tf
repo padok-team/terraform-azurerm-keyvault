@@ -26,7 +26,21 @@ resource "azurerm_key_vault" "this" {
 
   purge_protection_enabled   = true
   soft_delete_retention_days = var.soft_delete_retention_days
-  tags                       = var.tags
+
+  dynamic "access_policy" {
+    for_each = var.access_policy
+    content {
+      tenant_id               = data.azurerm_client_config.this.tenant_id
+      object_id               = access_policy.key
+      application_id          = access_policy.value.application_id
+      certificate_permissions = access_policy.value.certificate_permissions
+      key_permissions         = access_policy.value.key_permissions
+      secret_permissions      = access_policy.value.secret_permissions
+      storage_permissions     = access_policy.value.storage_permissions
+    }
+  }
+
+  tags = var.tags
 }
 data "azurerm_monitor_diagnostic_categories" "this" {
   count       = var.logs_enabled ? 1 : 0

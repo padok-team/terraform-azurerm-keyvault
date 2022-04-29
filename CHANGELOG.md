@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.1](https://github.com/padok-team/terraform-azurerm-keyvault/compare/v0.1.0...v0.1.1) (2022-04-29)
+
+
+### Features
+
+* **policy:** add access policies interface to keyvault ([74ce6e9](https://github.com/padok-team/terraform-azurerm-keyvault/commit/74ce6e9ef9fc36cf72d4e83af11b69b102ffe09e))
+
+
+### Bug Fixes
+
+* **examples:** add rg nad make them self-supporting ([35d8264](https://github.com/padok-team/terraform-azurerm-keyvault/commit/35d8264313ef4b1a0a59650628663e4a3d0db998))
+
 ## [0.1.0](https://github.com/padok-team/terraform-azurerm-keyvault/compare/v0.0.1...v0.1.0) (2022-03-18)
 
 

@@ -97,3 +97,23 @@ variable "eventhub_authorization_rule_id" {
   type        = string
   default     = null
 }
+
+# Resource : azurerm_key_vault_access_policy
+
+# object_id => The object ID of a user, service principal or security group in the Azure Active Directory tenant for the vault. The object ID must be unique for the list of access policies.
+# application_id => The object ID of an Application in Azure Active Directory, if relevant.
+# certificate_permissions => List of certificate permissions, must be one or more from the following: Backup, Create, Delete, DeleteIssuers, Get, GetIssuers, Import, List, ListIssuers, ManageContacts, ManageIssuers, Purge, Recover, Restore, SetIssuers and Update.
+# key_permissions => List of key permissions, must be one or more from the following: Backup, Create, Decrypt, Delete, Encrypt, Get, Import, List, Purge, Recover, Restore, Sign, UnwrapKey, Update, Verify and WrapKey.
+# secret_permissions => List of secret permissions, must be one or more from the following: Backup, Delete, get, list, purge, recover, restore and set.
+# storage_permissions => List of storage permissions, must be one or more from the following: Backup, Delete, DeleteSAS, Get, GetSAS, List, ListSAS, Purge, Recover, RegenerateKey, Restore, Set, SetSAS and Update.
+variable "access_policy" {
+  type = map(object({
+    application_id          = optional(string)
+    certificate_permissions = optional(list(string))
+    key_permissions         = optional(list(string))
+    secret_permissions      = optional(list(string))
+    storage_permissions     = optional(list(string))
+  }))
+  description = "List of policies to access the Key Vault."
+  default     = {}
+}
