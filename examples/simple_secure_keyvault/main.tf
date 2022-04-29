@@ -14,9 +14,20 @@ provider "azurerm" {
   features {}
 }
 
+resource "random_pet" "random" {}
+
+resource "azurerm_resource_group" "example" {
+  name     = "test-keyvault"
+  location = "francecentral"
+}
+
 module "keyvault" {
   source = "../.."
-  name  = "keyvaulttest123soleil" # Vault names are globaly unique
-  resource_group_name = "test-keyvault"
+  name  = random_pet.random.id # Vault names are globaly unique
+  resource_group_name = azurerm_resource_group.example.name
   sku_name = "standard"
+
+  depends_on = [
+    azurerm_resource_group.example
+  ]
 }
