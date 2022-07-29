@@ -1,7 +1,7 @@
 # Short description of the use case in comments
 
 terraform {
-  required_version = ">= 0.13.0"
+  required_version = ">= 1.0.9"
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
@@ -14,7 +14,8 @@ provider "azurerm" {
   features {}
 }
 
-data "azurerm_client_config" "self" {}
+data "azurerm_client_config" "this" {}
+
 resource "random_pet" "random" {}
 
 resource "azurerm_resource_group" "example" {
@@ -25,9 +26,12 @@ resource "azurerm_resource_group" "example" {
 module "keyvault" {
   source = "../.."
 
-  name                = random_pet.random.id # Needs to be globaly unique
-  resource_group_name = azurerm_resource_group.example.name
-  sku_name            = "standard"
+  name = random_pet.random.id # Needs to be globaly unique
+
+  resource_group = azurerm_resource_group.example
+  tenant_id      = data.azurerm_client_config.this.tenant_id
+
+  sku_name = "standard"
 
   network_acls = {
     ip_rules                   = ["0.0.0.0/0"]
@@ -35,7 +39,7 @@ module "keyvault" {
   }
 
   access_policy = {
-    (data.azurerm_client_config.self.object_id) : {
+    (data.azurerm_client_config.this.object_id) : {
       secret_permissions = ["Get", "List"]
     }
   }
@@ -44,8 +48,4 @@ module "keyvault" {
     terraform = "true"
     padok     = "library"
   }
-
-  depends_on = [
-    azurerm_resource_group.example
-  ]
 }

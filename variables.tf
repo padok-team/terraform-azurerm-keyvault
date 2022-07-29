@@ -1,7 +1,14 @@
-# Data
-variable "resource_group_name" {
+variable "resource_group" {
+  type = object({
+    name     = string
+    location = string
+  })
+  description = "Resource group configuration."
+}
+
+variable "tenant_id" {
   type        = string
-  description = "The Name of this Resource Group."
+  description = "The Azure Active Directory tenant ID that should be used for authenticating requests to the key vault."
 }
 
 # Resource : azurerm_key_vault
@@ -66,38 +73,6 @@ variable "soft_delete_retention_days" {
   }
 }
 
-variable "tags" {
-  type        = map(string)
-  description = " A mapping of tags to assign to the resource."
-  default     = {}
-}
-
-# logging
-
-variable "logs_enabled" {
-  description = "Should the log export with DiagnosticSetting be enabled ?"
-  type        = bool
-  default     = false
-}
-
-variable "log_analytics_workspace_id" {
-  description = "The ID of the log analytics workspace where to export logs."
-  type        = string
-  default     = null
-}
-
-variable "storage_account_id" {
-  description = "The ID of the storage account where to export logs."
-  type        = string
-  default     = null
-}
-
-variable "eventhub_authorization_rule_id" {
-  description = "ID of an Event Hub Namespace Authorization Rule used to send Diagnostics Data."
-  type        = string
-  default     = null
-}
-
 # Resource : azurerm_key_vault_access_policy
 
 # object_id => The object ID of a user, service principal or security group in the Azure Active Directory tenant for the vault. The object ID must be unique for the list of access policies.
@@ -115,5 +90,11 @@ variable "access_policy" {
     storage_permissions     = optional(list(string))
   }))
   description = "List of policies to access the Key Vault."
+  default     = {}
+}
+
+variable "tags" {
+  type        = map(string)
+  description = " A mapping of tags to assign to the resource."
   default     = {}
 }
