@@ -12,7 +12,7 @@ precommit: ## Runs precommit on all files
 	$(call info_colors,green,👍 Pre-commit checks)
 	@pre-commit run --all-files && echo "Pre-commit checks passed" || echo "Pre-commit checks failed"
 
-##@ Formating	
+##@ Formating
 format: ## Runs Terraform fmt and Validate
 	terraform fmt
 	terraform validate
