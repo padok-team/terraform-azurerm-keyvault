@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/padok-team/terraform-azurerm-keyvault/compare/v0.1.1...v0.2.0) (2022-11-04)
+
+
+### Features
+
+* **acl:** add flag to allow for making keyvault public ([ade5397](https://github.com/padok-team/terraform-azurerm-keyvault/commit/ade5397e685c80f40a496cf5f6d0ded04959347b))
+
+
+### Bug Fixes
+
+* **data:** remove data from module ([efc14ae](https://github.com/padok-team/terraform-azurerm-keyvault/commit/efc14ae544b81b9a0caeb78f1bc4e63b0ec82037))
+* **data:** remove data from module ([4953ba8](https://github.com/padok-team/terraform-azurerm-keyvault/commit/4953ba8037d7017d1b4da3d00c6a078f102e4e68))
+
 ### [0.1.2](https://github.com/padok-team/terraform-azurerm-keyvault/compare/v0.1.1...v0.1.2) (2022-07-29)
 
 
