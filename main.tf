@@ -10,12 +10,16 @@ resource "azurerm_key_vault" "this" {
   enabled_for_disk_encryption     = var.enabled_for_disk_encryption
   enabled_for_template_deployment = var.enabled_for_template_deployment
   enable_rbac_authorization       = var.enable_rbac_authorization
+
   # Allow all azure services but Deny everyting else
-  network_acls {
-    bypass                     = "AzureServices"
-    default_action             = "Deny"
-    ip_rules                   = var.network_acls.ip_rules
-    virtual_network_subnet_ids = var.network_acls.virtual_network_subnet_ids
+  dynamic "network_acls" {
+    for_each = var.enable_network_acl ? [0] : []
+    content {
+      bypass                     = "AzureServices"
+      default_action             = "Deny"
+      ip_rules                   = var.network_acls.ip_rules
+      virtual_network_subnet_ids = var.network_acls.virtual_network_subnet_ids
+    }
   }
 
   purge_protection_enabled   = true

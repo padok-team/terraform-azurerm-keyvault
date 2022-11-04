@@ -56,7 +56,7 @@ variable "network_acls" {
     ip_rules                   = list(string)
     virtual_network_subnet_ids = list(string)
   })
-  description = "Network acls to deploy on the key vault. ip_rules is a list of IP or CIDR blocks"
+  description = "Network acls to deploy on the key vault. ip_rules is a list of IP or CIDR blocks."
   default = {
     ip_rules                   = []
     virtual_network_subnet_ids = []
@@ -97,4 +97,10 @@ variable "tags" {
   type        = map(string)
   description = "A mapping of tags to assign to the resource."
   default     = {}
+}
+
+variable "enable_network_acl" {
+  type        = bool
+  description = "Boolean flag to enable or not network acl."
+  default     = true
 }
