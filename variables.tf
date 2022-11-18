@@ -5,6 +5,19 @@ variable "resource_group" {
   })
   description = "Resource group configuration."
 }
+variable "log_analytics_workspace_id" {
+  type        = string
+  description = "The workspace  ID that should be used for receving log"
+  default     = ""
+}
+
+variable "logs_enabled" {
+  type        = bool
+  description = "are we logging this ressource ?"
+  default     = true
+}
+
+
 
 variable "tenant_id" {
   type        = string

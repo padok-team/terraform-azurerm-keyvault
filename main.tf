@@ -40,3 +40,18 @@ resource "azurerm_key_vault" "this" {
 
   tags = var.tags
 }
+
+module "logger" {
+  source                     = "git@github.com:padok-team/terraform-azurerm-logger.git?ref=v0.2.0"
+  count                      = var.logs_enabled ? 1 : 0
+  log_analytics_workspace_id = var.log_analytics_workspace_id
+  create_new_workspace       = false
+  resource_group             = var.resource_group
+  name                       = "logger"
+  resources_to_logs = [
+    azurerm_key_vault.this.id
+  ]
+  resources_to_metrics = [
+    azurerm_key_vault.this.id
+  ]
+}

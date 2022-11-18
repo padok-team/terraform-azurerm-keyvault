@@ -28,10 +28,10 @@ module "keyvault" {
 
   name = random_pet.random.id # Needs to be globaly unique
 
-  resource_group = azurerm_resource_group.example
-  tenant_id      = data.azurerm_client_config.this.tenant_id
-
-  sku_name = "standard"
+  resource_group             = azurerm_resource_group.example
+  tenant_id                  = data.azurerm_client_config.this.tenant_id
+  log_analytics_workspace_id = data.azurerm_client_config.this.workspace_id
+  sku_name                   = "standard"
 
   network_acls = {
     ip_rules                   = ["0.0.0.0/0"]

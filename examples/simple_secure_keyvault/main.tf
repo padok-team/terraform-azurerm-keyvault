@@ -29,6 +29,7 @@ module "keyvault" {
 
   resource_group = azurerm_resource_group.example
   tenant_id      = data.azurerm_client_config.this.tenant_id
+  workspace_id   = data.azurerm_client_config.this.workspace_id
 
   sku_name = "standard"
 }
