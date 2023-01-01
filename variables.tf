@@ -63,6 +63,13 @@ variable "network_acls" {
   }
 }
 
+variable "enable_network_acl" {
+  type        = bool
+  description = "Boolean flag to enable or not network acl."
+  default     = true
+}
+
+
 variable "soft_delete_retention_days" {
   type        = string
   description = "The number of days that items should be retained for once soft-deleted. This value can be between 7 and 90 (the default) days."
@@ -93,14 +100,22 @@ variable "access_policy" {
   default     = {}
 }
 
+variable "private_endpoint" {
+  description = "The private endpoint configuration."
+  type = object({
+    enable              = bool,
+    subnet_id           = string
+    private_dns_zone_id = string,
+  })
+  default = {
+    enable              = false
+    subnet_id           = null
+    private_dns_zone_id = null
+  }
+}
+
 variable "tags" {
   type        = map(string)
   description = "A mapping of tags to assign to the resource."
   default     = {}
-}
-
-variable "enable_network_acl" {
-  type        = bool
-  description = "Boolean flag to enable or not network acl."
-  default     = true
 }

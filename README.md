@@ -64,7 +64,10 @@ No modules.
 | <a name="input_enabled_for_disk_encryption"></a> [enabled\_for\_disk\_encryption](#input\_enabled\_for\_disk\_encryption) | Boolean flag to specify whether Azure Disk Encryption is permitted to retrieve secrets from the vault and unwrap keys. | `bool` | `false` | no |
 | <a name="input_enabled_for_template_deployment"></a> [enabled\_for\_template\_deployment](#input\_enabled\_for\_template\_deployment) | Boolean flag to specify whether Azure Resource Manager is permitted to retrieve secrets from the key vault. | `bool` | `false` | no |
 | <a name="input_network_acls"></a> [network\_acls](#input\_network\_acls) | Network acls to deploy on the key vault. ip\_rules is a list of IP or CIDR blocks. | <pre>object({<br>    ip_rules                   = list(string)<br>    virtual_network_subnet_ids = list(string)<br>  })</pre> | <pre>{<br>  "ip_rules": [],<br>  "virtual_network_subnet_ids": []<br>}</pre> | no |
+| <a name="input_private_endpoint"></a> [private\_endpoint](#input\_private\_endpoint) | The private endpoint configuration. | <pre>object({<br>    enable               = bool,<br>    private_dns_zone_ids = list(string)<br>  })</pre> | <pre>{<br>  "enable": false,<br>  "private_dns_zone_ids": []<br>}</pre> | no |
 | <a name="input_soft_delete_retention_days"></a> [soft\_delete\_retention\_days](#input\_soft\_delete\_retention\_days) | The number of days that items should be retained for once soft-deleted. This value can be between 7 and 90 (the default) days. | `string` | `"90"` | no |
+| <a name="input_subnet"></a> [subnet](#input\_subnet) | The subnet configuration for private endpoint. | <pre>object({<br>    address_prefixes = list(string)<br>    virtual_network = object({<br>      name = string<br>    })<br>  })</pre> | `null` | no |
+| <a name="input_subnet_id"></a> [subnet\_id](#input\_subnet\_id) | An existing subnet id for private endpoint. | `string` | `null` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | A mapping of tags to assign to the resource. | `map(string)` | `{}` | no |
 
 ## Outputs
@@ -73,6 +76,7 @@ No modules.
 |------|-------------|
 | <a name="output_id"></a> [id](#output\_id) | The key vault ID. |
 | <a name="output_name"></a> [name](#output\_name) | The key vault name. |
+| <a name="output_private_endpoint"></a> [private\_endpoint](#output\_private\_endpoint) | The private endpoint instance. |
 | <a name="output_this"></a> [this](#output\_this) | The key vault. |
 <!-- END_TF_DOCS -->
 
