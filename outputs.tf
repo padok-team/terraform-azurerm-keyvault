@@ -10,3 +10,7 @@ output "name" {
   description = "The key vault name."
   value       = azurerm_key_vault.this.name
 }
+output "private_endpoint" {
+  description = "The private endpoint instance."
+  value       = var.private_endpoint.enable ? azurerm_private_endpoint.this.0 : null
+}
