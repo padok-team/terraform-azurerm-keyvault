@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.3](https://github.com/padok-team/terraform-azurerm-keyvault/compare/v0.3.0...v0.1.3) (2023-01-06)
+
+
+### Features
+
+* update azurerm provider version from 2.0 to 3.0 ([8435ad4](https://github.com/padok-team/terraform-azurerm-keyvault/commit/8435ad4d9bf99de1a0bb5224c630d189169d7f8f))
+
 ## [0.3.0](https://github.com/padok-team/terraform-azurerm-keyvault/compare/v0.2.0...v0.3.0) (2023-01-06)
 
 
