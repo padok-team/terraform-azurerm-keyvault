@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/padok-team/terraform-azurerm-keyvault/compare/v0.2.0...v0.3.0) (2023-01-06)
+
+
+### Features
+
+* **private-endpoint:** add Private endpoint configuration ([a2b6d0d](https://github.com/padok-team/terraform-azurerm-keyvault/commit/a2b6d0d1646ababaaa339a44a4d4d2e08fe37004))
+
 ## [0.2.0](https://github.com/padok-team/terraform-azurerm-keyvault/compare/v0.1.1...v0.2.0) (2022-11-04)
 
 
