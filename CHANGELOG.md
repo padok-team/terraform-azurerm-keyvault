@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.5.0](https://github.com/padok-team/terraform-azurerm-keyvault/compare/v0.4.0...v0.5.0) (2023-01-13)
+
+
+### Features
+
+* update logger configuration and interface to be homogenous with other modules ([45e19aa](https://github.com/padok-team/terraform-azurerm-keyvault/commit/45e19aa37ced21a189e7ae4a1e272e5307aeab1b))
+* update version constraint to &gt;=1.3.0 to match optional attribute feature in terraform ([b82bf10](https://github.com/padok-team/terraform-azurerm-keyvault/commit/b82bf109db480578081f5e401c63b9e96e3294f5))
+
+
+### Bug Fixes
+
+* **doc:** update readme ([1038760](https://github.com/padok-team/terraform-azurerm-keyvault/commit/1038760c6ce40ffd46fcff7d551eae05a8857d57))
+
 ## [0.4.0](https://github.com/padok-team/terraform-azurerm-keyvault/compare/v0.3.0...v0.4.0) (2023-01-06)
 
 
