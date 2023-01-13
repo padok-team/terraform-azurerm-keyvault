@@ -49,7 +49,7 @@ module "key_vault" {
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_logger"></a> [logger](#module\_logger) | git@github.com:padok-team/terraform-azurerm-logger.git | v0.2.0 |
+| <a name="module_logger"></a> [logger](#module\_logger) | git@github.com:padok-team/terraform-azurerm-logger.git | v0.4.0 |
 
 ## Inputs
 
@@ -65,13 +65,10 @@ module "key_vault" {
 | <a name="input_enabled_for_deployment"></a> [enabled\_for\_deployment](#input\_enabled\_for\_deployment) | Boolean flag to specify whether Azure Virtual Machines are permitted to retrieve certificates stored as secrets from the key vault. | `bool` | `false` | no |
 | <a name="input_enabled_for_disk_encryption"></a> [enabled\_for\_disk\_encryption](#input\_enabled\_for\_disk\_encryption) | Boolean flag to specify whether Azure Disk Encryption is permitted to retrieve secrets from the vault and unwrap keys. | `bool` | `false` | no |
 | <a name="input_enabled_for_template_deployment"></a> [enabled\_for\_template\_deployment](#input\_enabled\_for\_template\_deployment) | Boolean flag to specify whether Azure Resource Manager is permitted to retrieve secrets from the key vault. | `bool` | `false` | no |
-| <a name="input_log_analytics_workspace_id"></a> [log\_analytics\_workspace\_id](#input\_log\_analytics\_workspace\_id) | The workspace  ID that should be used for receving log | `string` | `""` | no |
-| <a name="input_logs_enabled"></a> [logs\_enabled](#input\_logs\_enabled) | are we logging this ressource ? | `bool` | `true` | no |
+| <a name="input_logging"></a> [logging](#input\_logging) | The logging configuration | <pre>object({<br>    enabled                    = bool,<br>    log_analytics_workspace_id = string<br>  })</pre> | <pre>{<br>  "enabled": false,<br>  "log_analytics_workspace_id": null<br>}</pre> | no |
 | <a name="input_network_acls"></a> [network\_acls](#input\_network\_acls) | Network acls to deploy on the key vault. ip\_rules is a list of IP or CIDR blocks. | <pre>object({<br>    ip_rules                   = list(string)<br>    virtual_network_subnet_ids = list(string)<br>  })</pre> | <pre>{<br>  "ip_rules": [],<br>  "virtual_network_subnet_ids": []<br>}</pre> | no |
-| <a name="input_private_endpoint"></a> [private\_endpoint](#input\_private\_endpoint) | The private endpoint configuration. | <pre>object({<br>    enable               = bool,<br>    private_dns_zone_ids = list(string)<br>  })</pre> | <pre>{<br>  "enable": false,<br>  "private_dns_zone_ids": []<br>}</pre> | no |
+| <a name="input_private_endpoint"></a> [private\_endpoint](#input\_private\_endpoint) | The private endpoint configuration. | <pre>object({<br>    enable              = bool,<br>    subnet_id           = string<br>    private_dns_zone_id = string,<br>  })</pre> | <pre>{<br>  "enable": false,<br>  "private_dns_zone_id": null,<br>  "subnet_id": null<br>}</pre> | no |
 | <a name="input_soft_delete_retention_days"></a> [soft\_delete\_retention\_days](#input\_soft\_delete\_retention\_days) | The number of days that items should be retained for once soft-deleted. This value can be between 7 and 90 (the default) days. | `string` | `"90"` | no |
-| <a name="input_subnet"></a> [subnet](#input\_subnet) | The subnet configuration for private endpoint. | <pre>object({<br>    address_prefixes = list(string)<br>    virtual_network = object({<br>      name = string<br>    })<br>  })</pre> | `null` | no |
-| <a name="input_subnet_id"></a> [subnet\_id](#input\_subnet\_id) | An existing subnet id for private endpoint. | `string` | `null` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | A mapping of tags to assign to the resource. | `map(string)` | `{}` | no |
 
 ## Outputs
