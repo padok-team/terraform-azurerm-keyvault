@@ -114,6 +114,18 @@ variable "private_endpoint" {
   }
 }
 
+variable "logging" {
+  description = "The logging configuration"
+  type = object({
+    enabled                    = bool,
+    log_analytics_workspace_id = string
+  })
+  default = {
+    enabled                    = false,
+    log_analytics_workspace_id = null
+  }
+}
+
 variable "tags" {
   type        = map(string)
   description = "A mapping of tags to assign to the resource."
