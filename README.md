@@ -28,9 +28,9 @@ Terraform module which creates a Key Vault resource on Azure.
 module "key_vault" {
   source = "git@github.com/padok-team/terraform-azurerm-keyvault"
 
-  name  = "my_key_vault"
+  name                = "my_key_vault"
   resource_group_name = "my_rg"
-  sku_name = "standard"
+  sku_name            = "standard"
 
   tags = {
     terraform = "true"
@@ -43,6 +43,8 @@ module "key_vault" {
 
 - [Example of simple secure keyvault](examples/simple_secure_keyvault/main.tf)
 - [Example of keyvault with tags and nacls](examples/keyvault_with_tags_and_nacls/main.tf)
+- [Example of keyvault without an ACL](examples/keyvault_without_acl/main.tf)
+- [Example of keyvault with a private endpoint](examples/keyvault_with_private_endpoint/main.tf)
 
 <!-- BEGIN_TF_DOCS -->
 ## Modules
