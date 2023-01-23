@@ -1,5 +1,5 @@
 module "logger" {
-  source = "git@github.com:padok-team/terraform-azurerm-logger.git?ref=v0.4.0"
+  source = "git@github.com:padok-team/terraform-azurerm-logger.git?ref=v0.4.1"
 
   count = var.logging.enabled ? 1 : 0
 
