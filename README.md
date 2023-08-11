@@ -51,7 +51,7 @@ module "key_vault" {
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_logger"></a> [logger](#module\_logger) | git@github.com:padok-team/terraform-azurerm-logger.git | v0.4.0 |
+| <a name="module_logger"></a> [logger](#module\_logger) | git@github.com:padok-team/terraform-azurerm-logger.git | v0.5.0 |
 
 ## Inputs
 
