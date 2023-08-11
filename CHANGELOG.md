@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.5.1](https://github.com/padok-team/terraform-azurerm-keyvault/compare/v0.5.0...v0.5.1) (2023-08-11)
+
+
+### Bug Fixes
+
+* properly write version name for logger ([17971b3](https://github.com/padok-team/terraform-azurerm-keyvault/commit/17971b33770a7aa0c2add87f4f8484dfb030c41a))
+
 ## [0.5.0](https://github.com/padok-team/terraform-azurerm-keyvault/compare/v0.4.0...v0.5.0) (2023-01-13)
 
 
