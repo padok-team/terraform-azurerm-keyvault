@@ -25,7 +25,7 @@ module "keyvault" {
   sku_name           = "standard"
 
   logging = {
-    enabled                    = true
+    enabled                    = false
     log_analytics_workspace_id = azurerm_log_analytics_workspace.this.id
   }
 }
